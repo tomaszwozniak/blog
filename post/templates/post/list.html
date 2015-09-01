@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+    Posts
+{% endblock %}
+
+{% block menu %}
+    {% include 'menu.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+{% for post in object_list %}
+    {% include 'post/single_post.html' %}
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading">#{{ post.id }} - {{ post.title }}
+        {% if request.user.is_admin %}
+            <a href="{% url 'edit_post' post.id %}">[E]</a>
+        {% endif %}
+    </div>
+    <div class="panel-body">
+    <p>
+        {{ post.content }}
+    </p>
+    <p>
+        Created: {{ post.created|date:"D d M Y" }}.
+        <a href="{% url 'add_comment' post.id %}">
+            Komentarze ({{ post.number_of_comments }})
+        </a>
+    </p>
+
+  </div>
+</div>
